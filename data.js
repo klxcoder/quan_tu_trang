@@ -690,3 +690,10 @@ const data = [
         "note": ""
     }
 ]
+
+const obj = {
+    dep: "Dép",
+    giayVai: "Giày vải",
+    k16: "Quần áo K16",
+    k20: "Quần áo K20",
+}
