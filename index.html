@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đổi quân tư trang</title>
+  <script src="data.js"></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function App() {
+      return (
+        <div>
+          <table>
+            <caption>Đổi quân tư trang</caption>
+            <thead>
+              <tr>
+                <th>Họ và tên</th>
+                <th>b</th>
+                <th>c</th>
+                <th>Quân trang cần đổi</th>
+                <th>Kích cỡ đã được phát</th>
+                <th>Cần đổi sang kích cỡ</th>
+                <th>Số lượng</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.name}</td>
+                  <td>{row.b}</td>
+                  <td>{row.c}</td>
+                  <td>{row.itemName}</td>
+                  <td>{row.current}</td>
+                  <td>{row.want}</td>
+                  <td>{row.amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>
